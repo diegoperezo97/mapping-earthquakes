@@ -1,7 +1,3 @@
-// Create a polyline using the line coordinates and make the line yellow.
-//L.polyline(line, {
-//    color: "yellow"
-// }).addTo(map);
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -126,4 +122,38 @@ d3.json(earthquakesjson).then(function (data) {
     }).addTo(earthquakes);
 
     earthquakes.addTo(map);
+
+    // Create a legend control object.
+    let legend = L.control({
+        position: "bottomright"
+    });
+    legend.onAdd = function () {
+
+        let div = L.DomUtil.create('div', 'info legend'),
+
+
+
+            magnitudes = [0, 1, 2, 3, 4, 5];
+        colors = [
+            "#98ee00",
+            "#d4ee00",
+            "#eecc00",
+            "#ee9c00",
+            "#ea822c",
+            "#ea2c2c"
+        ];
+
+
+        // loop through our density intervals and generate a label with a colored square for each interval
+        // Looping through our intervals to generate a label with a colored square for each interval.
+        for (var i = 0; i < magnitudes.length; i++) {
+            console.log(colors[i]);
+            div.innerHTML +=
+                "<i style='background: " + colors[i] + "'></i> " +
+                magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
+        }
+        return div;
+    };
+
+    legend.addTo(map);
 });
