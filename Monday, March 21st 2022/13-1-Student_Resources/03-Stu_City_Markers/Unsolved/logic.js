@@ -1,3 +1,6 @@
+// Get data from cities.js:
+let cityData = cities;
+
 // Create a map object
 var myMap = L.map("map", {
   center: [37.09, -95.71],
@@ -14,12 +17,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: API_KEY
 }).addTo(myMap);
 
-// City markers
-
-// Add code to create a marker for each city below and add it to the map
-
-// newyork;
-// chicago;
-// houston;
-// la;
-// omaha;
+cityData.forEach(city => L.marker(city.location)
+  .bindPopup(`<h1>${city.name}</h1> <hr> <h3>Population ${city.population}</h3>`)
+  .addTo(myMap)
+);
