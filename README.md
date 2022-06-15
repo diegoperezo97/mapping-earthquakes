@@ -1,5 +1,19 @@
 # MODULE 13: Mapping Earthquakes with JS & APIs
 
+An essential talent for someone working in the data visualization industry is the ability to design user-friendly interactive maps. Maps let us explore, comprehend, and decide about my world, from the New York Times to initiatives for the Center for Strategic International Studies.
+
+I’ll use the D3 library and my knowledge of JavaScript to construct an interactive globe map in this module. I'll employ GeoJSON, a kind of JSON file created expressly to store geographic data.
+
+Many apps with mapping capabilities, like ride-sharing, navigation, and food and package delivery services, use GeoJSON data. You can utilize GeoJSON data and monitor my whereabouts using even the applications on my smartphone. The industry standard for encoding basic geographic characteristics and non-spatial information is GeoJSON.
+
+I'll look at geographic elements like points, which have addresses, and places, which have coordinates like latitude and longitude. Tectonic plate borders are marked by line-strings that provide coordinates for their locations. likewise polygons with coordinates for the borders of regions like counties, nations, provinces, and swaths of territory.
+
+Additionally, I'll discuss non-spatial qualities, which are data that are stored in a GeoJSON file's hierarchical structure and are unrelated to any geometrical concerns. Examples include altitude, temperature, amount of rain, size of the hail, tornado or hurricane strength, and earthquake magnitude.
+
+I will navigate and obtain GeoJSON earthquake data and tectonic plate data to create a geographical map using my expertise with JavaScript and the D3 library. I'll also make use of the Mapbox Al and the leaflet library for this.
+
+Let's begin by populating a map with information from a GeoJSON file using JavaScript, the D3 and leaflet frameworks.
+
 ## Overview of the Analysis
 
 * I have just secured a fantastic job opportunity: _"Specialist in Data Visualization for the Disaster Reporting Network"_. A non-profit organization that uses statistics to create stories about disasters all across the world. If I accept the mission, I will be tasked with creating interesting data visualizations with interactive elements on earthquakes from across the world.
